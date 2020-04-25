@@ -217,12 +217,28 @@ int profilehack(int gems, int level) {
 }
 
 void printlogo() {
-	printf("\033[32;1m   ___         _         ___      _     _ _   \033[0m\n");
-	printf("\033[32;1m  / __|__ _ __| |_  __ _/ __|_ __| |___(_) |_ \033[0m\n");
-	printf("\033[32;1m | (_ / _` / _| ' \\/ _` \\__ \\ '_ \\ / _ \\ |  _|\033[0m\n");
-	printf("\033[32;1m  \\___\\__,_\\__|_||_\\__,_|___/ .__/_\\___/_|\\__|\033[0m\n");
-	printf("\033[32;1m                            |_|               \033[0m\n");
-	printf("\033[31;1m                       Made by Gacha Exploit Enthusiasts\033[0m\n\n");
+#if _WIN32
+	HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
+	CONSOLE_SCREEN_BUFFER_INFO consoleInfo;
+	WORD saved_attributes;
+
+	GetConsoleScreenBufferInfo(hConsole, &consoleInfo);
+	saved_attributes = consoleInfo.wAttributes;
+
+	SetConsoleTextAttribute(hConsole, FOREGROUND_GREEN);
+#endif 
+	printf("   ___         _         ___      _     _ _   \n");
+	printf("  / __|__ _ __| |_  __ _/ __|_ __| |___(_) |_ \n");
+	printf(" | (_ / _` / _| ' \\/ _` \\__ \\ '_ \\ / _ \\ |  _|\n");
+	printf("  \\___\\__,_\\__|_||_\\__,_|___/ .__/_\\___/_|\\__|\n");
+	printf("                            |_|               \n");
+#if _WIN32
+	SetConsoleTextAttribute(hConsole, FOREGROUND_RED);
+#endif
+	printf("                       Made by Gacha Exploit Enthusiasts\n\n");
+#if _WIN32
+	SetConsoleTextAttribute(hConsole, saved_attributes);
+#endif
 }
 
 void printusage(char* progname) {
@@ -289,24 +305,24 @@ int main(int argc, char** argv) {
 			}
 		}
 		printlogo();
-		printf("\033[34;1m[+]\033[0m Generating...\n");
+		printf("[+] Generating...\n");
 		if (gems && level) {
 			if (level < 1202) {
 				int savecode = profilehack(gems, level);
 				if (savecode != 0) {
-					printf("\033[34;1m[+]\033[0m Done!\n");
-					printf("\033[33;1m[*]\033[0m Save ID: %i\n", savecode);
+					printf("[+] Done!\n");
+					printf("[*] Save ID: %i\n", savecode);
 				}
 				else {
-					printf("\033[31;1m[!]\033[0m Error: Unknown error occurred, please try again later.\n");
+					printf("[!] Error: Unknown error occurred, please try again later.\n");
 				}
 			}
 			else {
-				printf("\033[31;1m[!]\033[0m Error: Level amount cannot be over 1,201.\n");
+				printf("[!] Error: Level amount cannot be over 1,201.\n");
 			}
 		}
 		else {
-			printf("\033[31;1m[!]\033[0m Error: Gem and level amount required.\n");
+			printf("[!] Error: Gem and level amount required.\n");
 		}
 	}
 #if _WIN32
