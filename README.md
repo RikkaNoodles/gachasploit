@@ -2,7 +2,7 @@
 GachaSploit is a series of exploits developed by expl0itcha1nz for the game "Gacha Life" created by the mobile game company Lunime. These exploits can be utilized to generate gems and XP/levels in-game.
 
 ## Installation & Building
-You can download a pre-built version of this program by clicking [here](https://cdn.discordapp.com/attachments/697283117077102612/703466784568901653/gachasploit.exe).
+You can download a pre-built version of this program by clicking [here](https://cdn.discordapp.com/attachments/697283117077102612/703647044551573604/gachasploit.zip).
 
 To build the program, you must have [Git](https://git-scm.com) installed in order to download GachaSploit. On Linux, you must have ``gcc`` and ``make`` installed on your system to build the software. 
 
