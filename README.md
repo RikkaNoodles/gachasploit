@@ -4,30 +4,24 @@ GachaSploit is a series of exploits developed by expl0itcha1nz for the game "Gac
 ## Installation & Building
 You can download a pre-built version of this program by clicking [here](https://cdn.discordapp.com/attachments/697283117077102612/703466784568901653/gachasploit.exe).
 
-To build the program, you must have [Git](https://git-scm.com) installed in order to download and execute GachaSploit. On Linux, you must have ``gcc`` and ``make`` installed on your system to build the software. On Windows, you must have either MinGW or Visual Studio installed to build.
+To build the program, you must have [Git](https://git-scm.com) installed in order to download GachaSploit. On Linux, you must have ``gcc`` and ``make`` installed on your system to build the software. 
 
-To download GachaSploit, open your Linux terminal or Windows command prompt and execute:
+On Windows, you must have either MinGW, Cygwin, or Visual Studio installed to build. MinGW with MSYS2 is recommended. That can be downloaded [here](https://www.msys2.org/).
+
+To download the GachaSploit source code, open your Linux terminal or Windows command prompt and type:
 
 ```bash
 git clone https://github.com/expl0itcha1nz/gachasploit
 ```
 
-To build on Linux, cd into the directory, and type the following command:
+To build on Linux, cd into the directory, and type ``make`` to build.
 
-```make```
+To build on MinGW with MSYS2, install gcc and make by typing ``pacman -S gcc make``. Afterwards, cd into the gachasploit directory, and type ``make`` to build the program.
 
-To build on MinGW, open the Makefile in a text editor and add the following to the build command (in "all"):
-
-```-lws2_32 -lwsock32```
-
-then type ``make`` to build it.
-
-It can also be built on Visual Studio >=2015 (will write instructions here later on how to do this)
+It can also be built on Visual Studio 2015 or newer. I will write instructions here later on how to do this.
 
 ## Usage
 **GachaSploit is currently only compatible with Linux and Windows. If you are on MacOS, please use the [online demo](https://gachasploit.ga/demo.html).**
-
-After using `git clone`, `cd` to `gachasploit` and type `make`. After this, you simply have to type `./gachasploit` and instructions will appear before you.
 
 ```bash
 Usage: ./gachasploit [-h] [--gems GEMS] [--level LEVEL]
@@ -49,4 +43,4 @@ As shown in the above instructional text, using `-g` and `-l` will allow you to 
 ```
 
 ## Limitations
-The limit for the amount of gems you can generate in this program is 2,147,483,647 - which is the 32-bit integer limit. The limit for the amount of levels you can generate is 1,201. This program only works on Android on the latest version of Gacha Life.
+The limit for the amount of gems you can generate in this program is 2,147,483,647, which is the 32-bit integer limit. The limit for the amount of levels you can generate is 1,201. This program currently only works on Android on the latest version of Gacha Life.
