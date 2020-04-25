@@ -1,13 +1,31 @@
 # GachaSploit
 GachaSploit is a series of exploits developed by expl0itcha1nz for the game "Gacha Life" created by the mobile game company Lunime. These exploits can be utilized to generate gems and XP/levels in-game.
 
-## Installation
-You must have [Git](https://git-scm.com) installed in order to download and execute GachaSploit. To download GachaSploit, simply open your Linux terminal and execute:
+## Installation & Building
+You can download a pre-built version of this program by clicking [here](https://cdn.discordapp.com/attachments/697283117077102612/703466784568901653/gachasploit.exe).
+
+To build the program, you must have [Git](https://git-scm.com) installed in order to download and execute GachaSploit. On Linux, you must have ``gcc`` and ``make`` installed on your system to build the software. On Windows, you must have either MinGW or Visual Studio installed to build.
+
+To download GachaSploit, open your Linux terminal or Windows command prompt and execute:
+
 ```bash
 git clone https://github.com/expl0itcha1nz/gachasploit
 ```
+
+To build on Linux, cd into the directory, and type the following command:
+
+```make```
+
+To build on MinGW, open the Makefile in a text editor and add the following to the build command (in "all"):
+
+```-lws2_32 -lwsock32```
+
+then type ``make`` to build it.
+
+It can also be built on Visual Studio >=2015 (will write instructions here later on how to do this)
+
 ## Usage
-**GachaSploit is currently only compatible with Linux. If you are on Windows or MacOS, please use the [online demo](https://gachasploit.ga/demo.html).**
+**GachaSploit is currently only compatible with Linux and Windows. If you are on MacOS, please use the [online demo](https://gachasploit.ga/demo.html).**
 
 After using `git clone`, `cd` to `gachasploit` and type `make`. After this, you simply have to type `./gachasploit` and instructions will appear before you.
 
